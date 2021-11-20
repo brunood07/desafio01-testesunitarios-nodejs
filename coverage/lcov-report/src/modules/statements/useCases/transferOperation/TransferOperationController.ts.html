@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/modules/users/repositories/in-memory/InMemoryUsersRepository.ts</title>
+    <title>Code coverage report for src/modules/statements/useCases/transferOperation/TransferOperationController.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">src/modules/users/repositories/in-memory</a> InMemoryUsersRepository.ts</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">src/modules/statements/useCases/transferOperation</a> TransferOperationController.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">41.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/23</span>
+                <span class='fraction'>10/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">41.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/23</span>
+                <span class='fraction'>10/24</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -85,48 +85,48 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { User } from "../../entities/User";
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from "express";
+import { container } from "tsyringe";
+import { TransferOperationUseCase } from "./TransferOperationUseCase";
 &nbsp;
-import { ICreateUserDTO } from "../../useCases/createUser/ICreateUserDTO";
-import { IUsersRepository } from "../IUsersRepository";
+class TransferOperationController {
 &nbsp;
-export class InMemoryUsersRepository implements IUsersRepository {
-  private users: User[] = [];
-&nbsp;
-  async findByEmail(email: string): Promise&lt;User | undefined&gt; {
-    return this.users.find(user =&gt; user.email === email);
-  }
-&nbsp;
-  async findById(user_id: string): Promise&lt;User | undefined&gt; {
-    return this.users.find(user =&gt; user.id === user_id);
-  }
-&nbsp;
-  async create(data: ICreateUserDTO): Promise&lt;User&gt; {
-    const user = new User();
-    Object.assign(user, data);
-    this.users.push(user);
-    return user;
-  }
+<span class="fstat-no" title="function not covered" >    async handle(request: Request, response: Response): Promise&lt;Response&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const { amount, description } = request.body;</span>
+<span class="cstat-no" title="statement not covered" >        const { id: sender_id } = request.user;</span>
+<span class="cstat-no" title="statement not covered" >        const { receiver_id } = request.params;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const transferOperationUseCase = container.resolve(TransferOperationUseCase);</span>
+<span class="cstat-no" title="statement not covered" >        const transfer = await transferOperationUseCase.execute({</span>
+<span class="cstat-no" title="statement not covered" >            sender_id,</span>
+<span class="cstat-no" title="statement not covered" >            receiver_id,</span>
+<span class="cstat-no" title="statement not covered" >            description,</span>
+<span class="cstat-no" title="statement not covered" >            amount</span>
+<span class="cstat-no" title="statement not covered" >        });</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return response.status(201).json(transfer);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;
+export { TransferOperationController };</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
